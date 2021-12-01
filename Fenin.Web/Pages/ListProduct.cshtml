@@ -1,0 +1,62 @@
+﻿@page
+@model Fenin.Web.ListProductModel
+
+@{
+    ViewData["Title"] = "ListProduct";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>ListProduct</h1>
+
+<p>
+    <a href="/addproduct">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].ProductImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].SKU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Length)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Product) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
